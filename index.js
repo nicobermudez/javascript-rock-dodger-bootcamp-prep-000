@@ -29,26 +29,25 @@ function checkCollision(rock) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left)
 
     // FIXME: The DODGER is 40 pixels wide -- how do we get the right edge?
-<<<<<<< HEAD
+
     const dodgerRightEdge = positionToInteger(DODGER.style.left) + 40;
-=======
+
     const dodgerRightEdge = positionToInteger(DODGER.style.right);
->>>>>>> 3c1bed728f2907d317a1fe4b6e8fc07615bfb814
 
     const rockLeftEdge = positionToInteger(rock.style.left)
 
     // FIXME: The rock is 20 pixel's wide -- how do we get the right edge?
-<<<<<<< HEAD
+
     const rockRightEdge = positionToInteger(rock.style.left) + 20;
 
     if ((rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge) || 
        (rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge) || (rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge)) {
-=======
+
     const rockRightEdge = positionToInteger(DODGER.style.right);
 
     if ((rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge) || 
        (rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge)) {
->>>>>>> 3c1bed728f2907d317a1fe4b6e8fc07615bfb814
+
                /**
                * Think about it -- what's happening here?
                * There's been a collision if one of three things is true:
@@ -73,11 +72,10 @@ function createRock(x) {
   // Hmmm, why would we have used `var` here?
   var top = 0
 
-<<<<<<< HEAD
+
   rock.style.top = `${top}px`
   GAME.appendChild(rock);
 
-=======
   rock.style.top = top
 
   /**
@@ -88,7 +86,6 @@ function createRock(x) {
    rock.moveRock();
 
 }
->>>>>>> 3c1bed728f2907d317a1fe4b6e8fc07615bfb814
   /**
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
@@ -102,18 +99,16 @@ function createRock(x) {
      * we should call endGame()
      */
      if(checkCollision(rock)) {
-<<<<<<< HEAD
        endGame();
-=======
        return endGame();
->>>>>>> 3c1bed728f2907d317a1fe4b6e8fc07615bfb814
+
      }
        
     /**
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
      */
-<<<<<<< HEAD
+
      if(positionToInteger(rock.style.top) < 400) {
        top += 2;
        rock.style.top = `${top}px`;
@@ -123,12 +118,12 @@ function createRock(x) {
        rock.remove();
      }
 }
-=======
+
      if(rock.style.top > 0) {
        window.requestAnimationFrame(`${top += 2}"px"`);
      }
 
->>>>>>> 3c1bed728f2907d317a1fe4b6e8fc07615bfb814
+
     /**
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM
@@ -137,23 +132,21 @@ function createRock(x) {
   
 
   // We should kick of the animation of the rock around here
-<<<<<<< HEAD
+
   window.requestAnimationFrame(moveRock);
-=======
-  
->>>>>>> 3c1bed728f2907d317a1fe4b6e8fc07615bfb814
+
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
   ROCKS.push(rock)
 
   // Finally, return the rock element you've created
   return rock
-<<<<<<< HEAD
+
   
 }
-=======
+
   }
->>>>>>> 3c1bed728f2907d317a1fe4b6e8fc07615bfb814
+
 
 /**
  * End the game by clearing `gameInterval`,
@@ -162,7 +155,7 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-<<<<<<< HEAD
+
   ROCKS.forEach(function(rock){
       if (rock.parentNode)
         rock.remove();
@@ -176,7 +169,7 @@ function endGame() {
 function moveDodger(e) {
   
     // implement me!
-=======
+
   delete gameInterval
   document.getElementById("ROCKS").remove();
   moveDodger.removeEventListener();
@@ -184,7 +177,7 @@ function moveDodger(e) {
   return alert;
 }
   // implement me!
->>>>>>> 3c1bed728f2907d317a1fe4b6e8fc07615bfb814
+
   /**
    * This function should call `moveDodgerLeft()`
    * if the left arrow is pressed and `moveDodgerRight()`
@@ -192,7 +185,7 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
-<<<<<<< HEAD
+
    
     if (e.which === LEFT_ARROW) {
       moveDodgerLeft();
@@ -204,13 +197,13 @@ function moveDodger(e) {
       e.preventDefault()
       e.stopPropagation()
     }
-=======
+
 function moveDodger(e) {
 
   
     if (e.which === LEFT_ARROW) {moveDodgerLeft()}
     if (e.which === RIGHT_ARROW) {moveDodgerRight()}
->>>>>>> 3c1bed728f2907d317a1fe4b6e8fc07615bfb814
+
 }
 
 function moveDodgerLeft() {
